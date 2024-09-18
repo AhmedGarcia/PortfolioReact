@@ -5,7 +5,7 @@ function About() {
   return (
     <section>
       <h2>About Me</h2>
-      <img src="/assets/photo.jpg" alt="Your avatar" /> {/* Avatar */}==
+      <img src="/assets/Screenshot 2024-08-17 080120.png" alt="Your avatar" /> {/* Avatar */}==
       <p>Hello! etc</p> {/* Bio */}
     </section>
   );

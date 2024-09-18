@@ -13,7 +13,8 @@ function ContactForm() {
     };
 
     //Validate email format
-    const validateEmail = (email) => /\S+@\.\S+/.test(email);
+    const validateEmail = (email) => /\S+@\S+\.\S+/.test(email); 
+
 
     //Handle form sunmissionand validate required fields
     const handleSubmit = (e) => {
