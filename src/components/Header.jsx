@@ -1,12 +1,16 @@
 import React from 'react';
-import Navigation from './Navigation.jsx'; // Import the Navigation component
+import Navigation from './Navigation';
+import ThemeToggle from './ThemeToggle';
 
+// Header component with navigation and theme toggle
 function Header() {
-    return (
+  return (
     <header>
-      <h1>My Portfolio</h1> 
-      <Navigation /> 
+      <h1>My Portfolio</h1>
+      <ThemeToggle /> {/* Add theme toggle button */}
+      <Navigation />
     </header>
-    );
+  );
 }
+
 export default Header;

@@ -36,7 +36,7 @@ function ContactForm() {
             <div>
                 <label>Name</label>
                 <input type="text" name="name" onChange={handleChange} />
-                    {errors.name && <p>{errors.name}</p>} {/`* Display name error */}
+                    {errors.name && <p>{errors.name}</p>} {/* Display name error */}
             </div>
             <div>
                 <label>Email</label>

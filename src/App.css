@@ -1,44 +1,137 @@
+/* Global Styles for Light and Dark Modes */
+:root {
+  /* Light mode variables */
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --primary-color: #6200ea;
+  --secondary-color: #03dac6;
+  --link-color: #6200ea;
+  --link-hover-color: #3700b3;
+  --footer-link-color: #ffffff; /* Light mode link color in footer */
+}
+
+body.dark-mode {
+  /* Dark mode variables */
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --link-color: #bb86fc;
+  --link-hover-color: #03dac6;
+  --footer-link-color: #ffffff; /* Dark mode link color in footer */
+}
+
+/* Apply global styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  nav a.active {
-    font-weight: bold;
-  }
-  
-  section {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .project img {
-    width: 100%;
-    height: auto;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and Footer Styles */
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Footer Link Styles */
+footer a {
+  color: var(--footer-link-color); /* Set link color in footer */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--secondary-color); /* Change link color on hover */
+}
+
+/* Navigation Styles */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* Section and Main Content Styles */
+main {
+  padding: 2rem;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Project Component Styles */
+.project img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Link Styles */
+a {
+  color: var(--link-color); /* Default link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+a:hover {
+  color: var(--link-hover-color); /* Hover color */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Fixed Footer at the Bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Headings Styles with Techy Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Code Pro', monospace; /* Techy font for headings */
+}
+
