@@ -6,7 +6,8 @@ function Resume() {
     <section>
       <h2>Resume</h2>
       <p>
-        Download my resume <a href="/assets/Resume.pdf" download>here</a>
+        Download my resume <a href="/resume.pdf" className="resume-link">here</a>
+
       </p> {/* Link to download the resume */}
       <h3>Proficiencies</h3>
       <ul>
