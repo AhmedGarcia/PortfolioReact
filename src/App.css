@@ -1,27 +1,24 @@
 /* Global Styles for Light and Dark Modes */
 :root {
-  /* Light mode variables */
   --background-color: #f0f0f0;
   --text-color: #333;
   --primary-color: #6200ea;
   --secondary-color: #03dac6;
   --link-color: #6200ea;
   --link-hover-color: #3700b3;
-  --footer-link-color: #ffffff; /* Light mode link color in footer */
+  --footer-link-color: #ffffff;
 }
 
 body.dark-mode {
-  /* Dark mode variables */
   --background-color: #121212;
   --text-color: #e0e0e0;
   --primary-color: #bb86fc;
   --secondary-color: #03dac6;
   --link-color: #bb86fc;
   --link-hover-color: #03dac6;
-  --footer-link-color: #ffffff; /* Dark mode link color in footer */
+  --footer-link-color: #ffffff;
 }
 
-/* Apply global styles */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
@@ -37,17 +34,6 @@ header, footer {
   color: var(--text-color);
   padding: 1rem;
   text-align: center;
-}
-
-/* Footer Link Styles */
-footer a {
-  color: var(--footer-link-color); /* Set link color in footer */
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--secondary-color); /* Change link color on hover */
 }
 
 /* Navigation Styles */
@@ -68,28 +54,122 @@ nav a:hover {
   color: var(--secondary-color);
 }
 
+/* About Section Styles */
+.about-section {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: calc(100vh - 80px); /* Avoid overlap with footer */
+  padding: 2rem 1rem;
+}
+
+/* Image Styling */
+.about-section img {
+  max-width: 200px; /* Restrict image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Rounded corners */
+  margin-bottom: 1rem; /* Space between image and text */
+}
+
+/* Text Styling */
+.about-section p {
+  text-align: center; /* Center text */
+  max-width: 600px; /* Limit text width */
+  line-height: 1.5; /* Increase line height for readability */
+  margin-top: 1rem; /* Add space between image and text */
+}
+
+/* Portfolio Grid Styles */
+.portfolio-grid {
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Space between grid items */
+  padding: 2rem; /* Padding around the grid */
+  justify-items: center; /* Center items within the grid */
+}
+
+/* Individual Project Card Styles */
+.project {
+  background-color: var(--background-color); /* Card background color */
+  border: 1px solid var(--primary-color); /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Prevent content overflow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform and shadow transition */
+  width: 100%; /* Full width within grid item */
+  max-width: 300px; /* Limit maximum width of each card */
+}
+
+.project img {
+  width: 100%; /* Image takes full width of the card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.project h3 {
+  text-align: center; /* Center the title */
+  margin: 1rem 0; /* Space around the title */
+}
+
+.project p {
+  padding: 1rem; /* Padding inside the card */
+  text-align: center; /* Center the text */
+}
+
+.project a {
+  display: block; /* Make the link a block element */
+  text-align: center; /* Center align the link */
+  padding: 0.5rem 0; /* Padding for links */
+  color: var(--link-color); /* Link color */
+}
+
+.project a:hover {
+  color: var(--link-hover-color); /* Change link color on hover */
+}
+
+.project:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.project-details img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.project-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-details li {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 4px;
+}
+
 /* Section and Main Content Styles */
 main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px); /* Prevent overlap */
   padding: 2rem;
 }
 
 section {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Project Component Styles */
-.project img {
-  width: 100%;
-  height: auto;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Button Styles */
@@ -119,9 +199,20 @@ a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
 
+/* Footer Link Styles */
+footer a {
+  color: var(--footer-link-color); /* Set link color in footer */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--secondary-color); /* Change link color on hover */
+}
+
 /* Fixed Footer at the Bottom */
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   background-color: var(--primary-color);
@@ -134,4 +225,7 @@ footer {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Code Pro', monospace; /* Techy font for headings */
 }
+
+
+
 
