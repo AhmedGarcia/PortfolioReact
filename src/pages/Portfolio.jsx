@@ -50,16 +50,26 @@ function Portfolio() {
     
   ];
 
-  return (
-    <section>
+//   return (
+//     <section>
+//       <h2>Portfolio</h2>
+//       <div className="portfolio-grid">
+//         {projects.map((project) => (
+//           <Link key={project.id} to={`/portfolio/${project.id}`} style={{ textDecoration: 'none' }}> {/* Link to ProjectDetails */}
+//             <Project {...project} />
+//           </Link>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
+
+return (
+    <section className="portfolio-grid">
       <h2>Portfolio</h2>
-      <div className="portfolio-grid">
-        {projects.map((project) => (
-          <Link key={project.id} to={`/portfolio/${project.id}`} style={{ textDecoration: 'none' }}> {/* Link to ProjectDetails */}
-            <Project {...project} />
-          </Link>
-        ))}
-      </div>
+      {projects.map((project, index) => (
+        <Project key={index} {...project} />
+      ))}
     </section>
   );
 }
