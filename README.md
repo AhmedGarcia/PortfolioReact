@@ -71,21 +71,8 @@ To run this project locally, follow these steps:
 
 ## Deployed Application
 
-[Visit my portfolio on Netlify](https://your-portfolio-link.netlify.app/)
-
-## Screenshots
-
-### Light Mode
-
-![Light Mode](./screenshots/light-mode.png)
-
-### Dark Mode
-
-![Dark Mode](./screenshots/dark-mode.png)
-
-### Portfolio Page
-
-![Portfolio Page](./screenshots/portfolio-page.png)
+[Visit my portfolio on Netlify](https://tiny-maamoul-94e911.netlify.app/)
+And my repo on GitHub [here](https://github.com/AhmedGarcia/PortfolioReact)
 
 ## Contact
 
