@@ -51,14 +51,26 @@ function Portfolio() {
   ];
 
 
+// return (
+//     <section className="portfolio-grid">
+//       <h2>Portfolio</h2>
+//       {projects.map((project, index) => (
+//         <Project key={index} {...project} />
+//       ))}
+//     </section>
+//   );
+// }
+
 return (
-    <section className="portfolio-grid">
-      <h2>Portfolio</h2>
+  <section className="portfolio-container">
+    <h2>Portfolio</h2>
+    <div className="portfolio-grid">
       {projects.map((project, index) => (
         <Project key={index} {...project} />
       ))}
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
 export default Portfolio;

@@ -56,20 +56,24 @@ nav a:hover {
 
 /* About Section Styles */
 .about-section {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack content vertically */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   min-height: calc(100vh - 80px); /* Avoid overlap with footer */
   padding: 2rem 1rem;
+  text-align: center; /* Center text for the entire section */
+  border: 2px solid red; /* Debugging style */
+  padding: 20px; /* Debugging style */
 }
 
 /* Image Styling */
 .about-section img {
   max-width: 200px; /* Restrict image width */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Rounded corners */
-  margin-bottom: 1rem; /* Space between image and text */
+  border-radius: 50%; /* Rounded corners for circle */
+  margin-bottom: 1.5rem; /* Increase space between image and text */
+  display: block; /* Ensure the image is treated as a block-level element */
 }
 
 /* Text Styling */
@@ -77,16 +81,34 @@ nav a:hover {
   text-align: center; /* Center text */
   max-width: 600px; /* Limit text width */
   line-height: 1.5; /* Increase line height for readability */
-  margin-top: 1rem; /* Add space between image and text */
+  margin-top: 1.5rem; /* Space between image and text */
 }
 
 /* Portfolio Grid Styles */
+.portfolio-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align the content horizontally */
+  padding: 2rem 0; /* Add padding to top and bottom */
+}
+
+/* Style for the heading */
+.portfolio-container h2 {
+  font-size: 2rem; /* Increase font size */
+  margin-bottom: 1.5rem; /* Add space below the heading */
+  text-align: center; /* Center align the heading */
+  width: 100%; /* Take full width */
+}
+
+/* Adjust the project grid inside the portfolio section */
 .portfolio-grid {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   gap: 1.5rem; /* Space between grid items */
-  padding: 2rem; /* Padding around the grid */
-  justify-items: center; /* Center items within the grid */
+  width: 100%; /* Full width for grid */
+  max-width: 1200px; /* Limit grid width */
+  padding: 0 2rem; /* Horizontal padding for grid */
+  justify-items: center; /* Center align items in the grid */
 }
 
 /* Individual Project Card Styles */
@@ -130,33 +152,6 @@ nav a:hover {
 .project:hover {
   transform: translateY(-5px); /* Slight lift on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
-
-.project-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-.project-details img {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.project-details ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-details li {
-  background: var(--secondary-color);
-  color: var(--text-color);
-  padding: 0.5rem;
-  margin: 0.25rem 0;
-  border-radius: 4px;
 }
 
 /* Section and Main Content Styles */
@@ -225,6 +220,7 @@ footer {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Code Pro', monospace; /* Techy font for headings */
 }
+
 
 
 
