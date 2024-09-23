@@ -192,6 +192,17 @@ a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
 
+/* Specific Style for Resume Link */
+.resume-link {
+  color: var(--primary-color); /* Highlighted color for resume link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+.resume-link:hover {
+  color: var(--secondary-color); /* Change color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
 /* Footer Link Styles */
 footer a {
   color: var(--footer-link-color); /* Set link color in footer */
@@ -219,6 +230,7 @@ footer {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Code Pro', monospace; /* Techy font for headings */
 }
+
 
 
 
