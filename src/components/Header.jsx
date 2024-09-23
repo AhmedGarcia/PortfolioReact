@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle';
 function Header() {
   return (
     <header>
-      <h1>My Portfolio</h1>
+      <h1>Ahmed Garcia</h1>
       <ThemeToggle /> {/* Add theme toggle button */}
       <Navigation />
     </header>
