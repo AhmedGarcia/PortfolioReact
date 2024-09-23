@@ -1,151 +1,104 @@
-# Understanding Regex to Match Email Addresses
+# My React Portfolio
 
-## Introduction
+## Description
 
-Regular expressions, or regex, are a powerful tool used in web development and programming to define search patterns. 
-One of the most common use cases for regex is to validate user input, such as ensuring that an email address is entered in a proper format. 
-In this tutorial, we will break down a specific regex that is used to match email addresses. By the end of this walkthrough,
-you'll understand how each part of the regex works together to ensure valid email input.
-
-## Summary
-
-The regex pattern we are going to analyze is used to validate email addresses. This pattern ensures that the email address includes a 
-username, followed by the @ symbol, a valid domain name, and a top-level domain. Here is the regex we'll be discussing:
-
-```regex
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-```
-
-This pattern ensures that:
-
-* The email begins with a sequence of alphanumeric characters, underscores (_), periods (.), or hyphens (-).
-* An @ symbol separates the username from the domain.
-* The domain name is a valid combination of alphanumeric characters and special characters.
-* The top-level domain (TLD) is between 2 to 6 characters in length.
+This is my personal developer portfolio built with React and deployed on Netlify. It showcases my projects, provides information about me, and includes a contact form to reach out. The portfolio features a clean and responsive design with a light/dark mode toggle for enhanced user experience.
 
 ## Table of Contents
 
-- [Anchors](#1-anchors)
-- [Quantifiers](#2-quantifiers)
-- [Grouping Constructs](#3-grouping-constructs)
-- [Bracket Expressions](#4-bracket-expressions)
-- [Character Classes](#5-character-classes)
-- [The OR Operator](#6-the-or-operator)
-- [Flags](#7-flags)
-- [Character Escapes](#8-character-escapes)
+- [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Deployed Application](#deployed-application)
+- [Screenshots](#screenshots)
+- [Contact](#contact)
+- [License](#license)
 
-## Regex Components
+## Installation
 
-### 1. Anchors
+To run this project locally, follow these steps:
 
-Anchors are used to specify the position within a string where the match must occur.
+1. Clone the repository to your local machine:
 
-* ^ - This is the start anchor that asserts that the match must occur at the beginning of the string.
+    ```bash
+    git clone <repository-url>
+    ```
 
-* $ - This is the end anchor that asserts that the match must occur at the end of    the string.
+2. Navigate into the project directory:
 
-These anchors ensure that the entire string must match the email format, with no extra characters before or after.
+    ```bash
+    cd portfolio
+    ```
 
-```regex
-/^...$/
-```
+3. Install the necessary dependencies:
 
-### 2. Quantifiers
+    ```bash
+    npm install
+    ```
 
-Quantifiers define how many instances of a character, group, or character class must be present in the input for a match.
+4. Start the development server:
 
-* <+> This quantifier means "one or more" of the preceding element. In this regex, it applies to [a-z0-9_\.-], ensuring that there is at least one character before the @ symbol.
+    ```bash
+    npm run dev
+    ```
 
-* {2,6} This quantifier means "between 2 and 6 characters." It applies to the top-level domain part of the email to ensure that it is a valid length.
+5. Open your browser and go to `http://localhost:5173` to view the application.
 
-Example:
+## Usage
 
-```regex
-[a-z0-9_\.-]+    // Matches one or more alphanumeric characters, underscores, periods, or hyphens
-```
+- **Home Page:** Learn more about me through my bio and a professional headshot.
+- **Portfolio Page:** View a collection of my projects. Click "View Project" to visit the deployed app or "View Project Details" for more information about each project.
+- **Contact Page:** Use the form to send me a message directly.
+- **Resume Page:** Download my resume and see a list of my technical skills.
 
-### 3. Grouping Constructs
+## Features
 
-Grouping constructs allow for capturing and applying quantifiers to multiple characters as a single unit.
+- **Responsive Design:** Optimized for mobile and desktop screens.
+- **Light/Dark Mode Toggle:** Switch between light and dark themes for a better user experience.
+- **Project Cards:** Each project is displayed with a title, image, and links to the live demo and GitHub repository.
+- **Contact Form:** Users can send messages directly through the form, which includes field validation.
+- **Navigation Highlight:** The active page is highlighted in the navigation bar.
 
-* () - Parentheses create groups. In this regex, there are three groups:
+## Technologies Used
 
-   * ([a-z0-9_\.-]+) matches the username part before the @.
+- **Frontend:** React, React Router
+- **Styling:** CSS, Flexbox, CSS Grid
+- **Build Tool:** Vite
+- **Deployment:** Netlify
 
-   * ([\da-z\.-]+) matches the domain part after the @.
+## Deployed Application
 
-   * ([a-z\.]{2,6}) matches the top-level domain (TLD) part after the period.
+[Visit my portfolio on Netlify](https://your-portfolio-link.netlify.app/)
 
-Example:
+## Screenshots
 
-```regex
-([a-z0-9_\.-]+)    // Captures the username part of the email
-```
+### Light Mode
 
-### 4. Bracket Expressions
+![Light Mode](./screenshots/light-mode.png)
 
-* Bracket expressions (also called character sets) define a list of characters that can match at a given position.
+### Dark Mode
 
-* [a-z0-9_\.-] - This expression matches any lowercase letter (a-z), any digit (0-9), an underscore (_), a period (.), or a hyphen (-).
+![Dark Mode](./screenshots/dark-mode.png)
 
-* [a-z] - This matches any lowercase letter, ensuring that the TLD (like .com or .net) is alphabetic.
+### Portfolio Page
 
-* [\da-z\.-] - This matches any digit (\d), any lowercase letter, a period, or a hyphen.
+![Portfolio Page](./screenshots/portfolio-page.png)
 
-Example:
+## Contact
 
-```regex
-[a-z0-9_\.-]    // Matches alphanumeric characters, underscores, periods, and hyphens
-```
+For any inquiries or collaboration opportunities, feel free to reach out via the contact form on the website or connect with me on:
 
-### 5. Character Classes
+- **Email:** [ahmed.garcia.ramos@gmail.com](mailto:ahmed.garcia.ramos@gmail.com)
+- **GitHub:** [Ahmed Garcia](https://github.com/AhmedGarcia)
+- **LinkedIn:** [N/A](https://linkedin.com/in/your-linkedin-profile)
 
-Character classes are shortcuts that match specific types of characters.
+## License
 
-* \d - Matches any digit (0-9). This is used in the domain part of the regex to allow numbers in the domain name.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-Example:
+---
 
-```regex
-[\da-z\.-]    // Matches digits, lowercase letters, periods, or hyphens
-```
-
-### 6.  The OR Operator
-
-The OR operator (|) is used to match one of several possible options. In this regex, it is implied within the groups but not explicitly used. However, if we wanted to allow multiple types of TLDs (e.g., .com or .org), we could use the OR operator.
-
-Example (hypothetical):
-
-```regex
-(com|org|net)    // Would match "com", "org", or "net" as a TLD
-```
-
-### 7. Flags
-
-Flags are optional modifiers that change the behavior of the regex. In this case, our regex doesn't use any flags, but some common flags include:
-
-* i - Makes the regex case-insensitive.
-
-* g - Makes the regex global, meaning it will find all matches instead of stopping at the first.
-
-Example:
-
-```regex
-/i   // Case-insensitive matching
-```
-
-### 8. Character Escapes
-
-Character escapes are used to match special characters that would otherwise be interpreted as part of the regex syntax.
-
-* \. - Matches a literal period (.). Without the backslash, . would match any character.
-
-Example:
-
-```regex
-\.    // Matches a literal period
-```
-
-## Author
-
-Created by [Ahmed Garcia](https://github.com/AhmedGarcia). I'm a web development student passionate about regex and learning new programming concepts. Visit my [GitHub profile](https://github.com/AhmedGarcia) to see more of my work!
+Thank you for visiting my portfolio! I'm always open to feedback and suggestions. Let's connect and create something amazing together!
